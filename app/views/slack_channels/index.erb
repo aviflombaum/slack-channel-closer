@@ -15,13 +15,13 @@
       <tbody>
       
       <% @slack_channels.each do |slack_channel| %>
-      <tr>
+      <tr data-slack-id="<%= slack_channel.slack_id %>">
         <td><%= slack_channel.slack_name %></td>
         <td><%= slack_channel.slack_id %></td>
         <td><%= slack_channel.private? %></td>
         <td>
           <input type="checkbox" <%= slack_channel.closed? ? "checked" : "
-          " %> data-toggle="toggle">          
+          " %> data-toggle="toggle" name="slack_channel[closed]">          
         </td>
         <td><%= slack_channel.official? %></td>
       </tr>
