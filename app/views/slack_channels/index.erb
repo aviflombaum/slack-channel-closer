@@ -1,0 +1,33 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <h1 class="page-header">Slack Channels</h1>
+
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Slack ID</th>
+          <th>Private</th>
+          <th>Closed</th>
+          <th>Official</th>
+        </tr>
+      </thead>
+      <tbody>
+      
+      <% @slack_channels.each do |slack_channel| %>
+      <tr>
+        <td><%= slack_channel.slack_name %></td>
+        <td><%= slack_channel.slack_id %></td>
+        <td><%= slack_channel.private? %></td>
+        <td>
+          <input type="checkbox" <%= slack_channel.closed? ? "checked" : "
+          " %> data-toggle="toggle">          
+        </td>
+        <td><%= slack_channel.official? %></td>
+      </tr>
+      <% end %>
+
+      </tbody>
+    </table>
+  </div>
+</div>
