@@ -12,6 +12,7 @@ gem 'pry'
 gem 'bcrypt'
 gem "tux"
 gem 'slack-ruby-client'
+gem 'dotenv', groups: [:development, :test]
 
 group :test do
   gem 'rspec'

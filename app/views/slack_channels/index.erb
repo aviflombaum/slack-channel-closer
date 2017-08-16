@@ -12,21 +12,22 @@
           <th>Official</th>
         </tr>
       </thead>
-      <tbody>
-      
+      <tbody>  
       <% @slack_channels.each do |slack_channel| %>
-      <tr data-slack-id="<%= slack_channel.slack_id %>">
-        <td><%= slack_channel.slack_name %></td>
-        <td><%= slack_channel.slack_id %></td>
-        <td><%= slack_channel.private? %></td>
-        <td>
-          <input type="checkbox" <%= slack_channel.closed? ? "checked" : "
-          " %> data-toggle="toggle" name="slack_channel[closed]">          
-        </td>
-        <td><%= slack_channel.official? %></td>
-      </tr>
+        <tr data-slack-id="<%= slack_channel.slack_id %>">
+          <td><%= slack_channel.slack_name %></td>
+          <td><%= slack_channel.slack_id %></td>
+          <td><%= slack_channel.private? %></td>
+          <td>
+            <input type="checkbox" <%= slack_channel.closed? ? "checked" : "
+            " %> data-toggle="toggle" name="slack_channel[closed]">          
+          </td>
+          <td>
+            <input type="checkbox" <%= slack_channel.official? ? "checked" : "
+            " %> data-toggle="toggle" name="slack_channel[official]">
+          </td>
+        </tr>
       <% end %>
-
       </tbody>
     </table>
   </div>

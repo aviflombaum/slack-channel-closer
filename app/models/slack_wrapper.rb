@@ -1,5 +1,5 @@
 class SlackWrapper
-  TOKEN = 'xoxp-216895812753-217562343909-227060679668-be0c4ed9ff24fe3c74c4af3ed22a7267'
+  TOKEN = ENV["SLACK_TOKEN"]
 
   def initialize(token = nil)
     @token = token || TOKEN

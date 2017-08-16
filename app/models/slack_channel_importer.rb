@@ -1,5 +1,4 @@
 class SlackChannelImporter
-
   def initialize
     @client = SlackWrapper.new
   end

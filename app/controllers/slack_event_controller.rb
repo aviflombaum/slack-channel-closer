@@ -5,10 +5,8 @@ class SlackEventController < ApplicationController
 
     @slack_event = SlackEvent.new(request_body_params)
     @slack_event.process
-  end  
 
-  get '/slack_event' do
-    params[:challenge]
-  end
+    200
+  end  
 
 end
