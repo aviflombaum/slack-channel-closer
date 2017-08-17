@@ -22,8 +22,10 @@ class SlackEvent::Message
   end
 
   def process
-    slack_channel = SlackChannel.find_by(:slack_id => event_channel)
-    process_closed_message if slack_channel.closed?
+    if @data["event"]["subtype"] != "message_deleted"    
+      slack_channel = SlackChannel.find_by(:slack_id => event_channel)
+      process_closed_message if slack_channel.closed?
+    end
   end
 
   def process_closed_message
@@ -43,7 +45,6 @@ class SlackEvent::Message
 
   def sender_user_slack_id
     @data["event"]["user"]
-    binding.pry unless @data["event"]["user"]
   end
 
   def client
